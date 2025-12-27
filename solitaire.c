@@ -5,7 +5,7 @@
 
 int main() {
     char *rank[] = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
-    char symbol[] = {'@', '#', '$', '%'};
+    char *symbol[] = {"Heart","Diamond","Club","Spade"};
     int used[52] = {0};
     int r, s, index, count = 0;
     char choice;
@@ -14,8 +14,20 @@ int main() {
                       //used NULL as the time isnt to be stored anywhere. prototype: time_t time(time_t *variablename) where time_t is datatype representing 
                       //calender time(number of seconds elapsed with respect to a fixed base).
     
-    printf("**********Simple Solitaire Draaw**********\n\n");
+    printf("%-8s %-8s %-8s %-8s\n", "Heart", "Diamond", "Club", "Spade");
+    printf("%-8s %-8s %-8s %-8s\n", "K", "K", "K", "K");
+    printf("%-8s %-8s %-8s %-8s\n", "Q", "Q", "Q", "Q");
+    printf("%-8s %-8s %-8s %-8s\n", "J", "J", "J", "J");
 
+
+    for(int i=1;i<=10;i++)
+    {
+        for(int j=1;j<=4;j++)
+        {
+            printf("%-8d ",i);
+        }
+        printf("\n");
+    }
     while (count < 52) {
         printf("Press D to draw, Q to quit: ");
         scanf(" %c", &choice);
@@ -35,7 +47,7 @@ int main() {
             used[index] = 1;
             count++;
 
-            printf("You drew: %s %c\n", rank[r], symbol[s]);
+            printf("You drew: %s %s\n",symbol[s],rank[r]);
         }
         else{printf("Invalid Input! Retry\n");}
     }

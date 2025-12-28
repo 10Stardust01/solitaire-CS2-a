@@ -29,7 +29,7 @@ int main() {
         printf("\n");
     }
     while (count < 52) {
-        printf("Press D to draw, Q to quit: ");
+        printf("\nPress D to draw, Q to quit: ");
         scanf(" %c", &choice);
         choice=toupper(choice);
         if (choice == 'Q')
@@ -53,7 +53,7 @@ int main() {
     }
 
     if (count == 52)
-        printf("All cards drawn. Game over!\n");
+        printf("\nAll cards drawn. Game over!\n");
 
     return 0;
 }

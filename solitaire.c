@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 int main() {
-    char *rank[] = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+    char *rank[] = {"1","2","3","4","5","6","7","8","9","10","J","Q","K"};
     char *symbol[] = {"Heart","Diamond","Club","Spade"};
     int used[52] = {0};
     int r, s, index, count = 0;
@@ -13,7 +13,7 @@ int main() {
     srand(time(NULL));//set the reference base number to current time so random numbers are generated everytime despite formula depencdence of rand()
                       //used NULL as the time isnt to be stored anywhere. prototype: time_t time(time_t *variablename) where time_t is datatype representing 
                       //calender time(number of seconds elapsed with respect to a fixed base).
-    
+    printf("********Solitaire Card Game********\n\n");
     printf("%-8s %-8s %-8s %-8s\n", "Heart", "Diamond", "Club", "Spade");
     printf("%-8s %-8s %-8s %-8s\n", "K", "K", "K", "K");
     printf("%-8s %-8s %-8s %-8s\n", "Q", "Q", "Q", "Q");

@@ -3,9 +3,11 @@
 #include <time.h>
 #include <ctype.h>
 
-int main() {
+int main()
+{
+    int c;
     char *rank[] = {"1","2","3","4","5","6","7","8","9","10","J","Q","K"};
-    char *symbol[] = {"Heart","Diamond","Club","Spade"};
+    char *symbol[] = {"Club","Spade","Heart","Diamond"};
     int used[52] = {0};
     int r, s, index, count = 0;
     char choice;
@@ -18,7 +20,7 @@ int main() {
     printf("%-8s %-8s %-8s %-8s\n", "K", "K", "K", "K");
     printf("%-8s %-8s %-8s %-8s\n", "Q", "Q", "Q", "Q");
     printf("%-8s %-8s %-8s %-8s\n", "J", "J", "J", "J");
-
+    int score=0;
 
     for(int i=1;i<=10;i++)
     {
@@ -46,14 +48,35 @@ int main() {
 
             used[index] = 1;
             count++;
-
             printf("You drew: %s %s\n",symbol[s],rank[r]);
+            printf("Enter the stack you want to place the card into:\n1 for club\n2 for spade\n3 for heart\n4 for diamond: ");
+            printf("\n");
+            scanf("%d",&c);
+            printf("Enter position of entry: "); int p;
+            scanf("%d",&p); 
+            if (r==p-1 )
+            {
+              if (s==c-1)
+              {
+                 score+=1;
+              }
+              else
+              {
+                 score+=-1;
+              }
+            }
+            else
+              {
+                 score+=-1;
+              }
+            printf("score = %d\n",score);
+
         }
         else{printf("Invalid Input! Retry\n");}
     }
 
     if (count == 52)
         printf("\nAll cards drawn. Game over!\n");
-
-    return 0;
 }
+    
+    
